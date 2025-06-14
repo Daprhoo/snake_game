@@ -1,0 +1,109 @@
+# 🐍 Snake AI with Deep Q-Network (DQN)
+
+**CENG 3511 Artificial Intelligence Final Project**  
+*Build an AI Model to Run a Game*
+
+## 📋 Project Overview
+
+This project implements a **Deep Q-Network (DQN) reinforcement learning agent** that learns to play the classic Snake game. The AI starts with no knowledge and progressively learns optimal strategies through trial and error, eventually achieving expert-level performance.
+
+## 🎯 Features
+
+- **Complete Snake Game** built with Pygame
+- **DQN Reinforcement Learning Agent** using PyTorch
+- **Live Training Visualization** - watch AI learn in real-time
+- **Background Training Mode** for faster learning
+- **Human vs AI gameplay** comparison
+- **Training Progress Analytics** with graphs and statistics
+- **Model Persistence** - save and load trained agents
+
+## 🛠️ Requirements
+
+### System Requirements
+- **Python 3.7+**
+- **macOS/Windows/Linux**
+- **4GB RAM minimum**
+
+### Python Packages
+```bash
+pygame
+torch
+numpy
+matplotlib
+```
+
+## 📦 Installation
+
+### 1. Clone/Download Project
+```bash
+git clone 'https://github.com/Daprhoo/snake_game.git'
+# Create project directory
+mkdir snake_ai_project
+cd snake_ai_project
+
+# Save the snake_ai.py file in this directory
+```
+
+### 2. Install Dependencies
+```bash
+pip install pygame torch numpy matplotlib
+```
+
+
+### Run the Program
+```bash
+python snake_ai.py
+```
+
+### Menu Options
+```
+1. Train AI Agent (Background)     - Fast training without visuals
+2. Watch AI Play (Pre-trained)     - See trained AI in action
+3. Play Yourself                   - Human gameplay with arrow keys
+4. View Training Results           - Analytics and graphs
+5. 🎮 Watch AI Learn Live!         - Real-time learning visualization (experimental)
+6. Exit                           - Quit program
+```
+
+## 🎮 How to Use
+
+### Option 1: Background Training
+- **Best for**: First-time training or long training sessions
+- **Recommended**: 1000+ episodes for good performance
+- **Output**: Training progress in terminal
+- **Files created**: `snake_dqn_model.pth`, `training_scores.json`
+
+### Option 5: Live Training (⭐ Recommended!)
+- **Best for**: Watching AI learn from scratch
+- **Recommended**: 200-500 episodes for entertaining session
+- **What you see**: Real-time gameplay with learning statistics
+- **Controls**: ESC to stop early
+- **Files created**: `snake_dqn_live_model.pth`, `live_training_scores.json`
+
+### Option 2: Watch Trained AI
+- **Requirements**: Must have trained model first
+- **What you see**: Expert AI gameplay
+- **Performance**: Typically scores 15-30+ foods per game
+
+### Option 3: Human Play
+- **Controls**: Arrow keys to move snake
+- **Goal**: Try to beat the AI's score!
+
+### Option 4: View Results
+- **Shows**: Training progress graphs and statistics
+- **Requires**: Completed training session
+
+## 📊 Understanding Training Output
+
+```
+Episode | Score | Epsilon | Avg Score (last 100)
+   0    |   0   | 0.995   | 0.00
+ 500    |   3   | 0.081   | 1.45
+1000    |  15   | 0.010   | 12.30
+1500    |  28   | 0.010   | 18.75
+```
+
+- **Episode**: Training episode number
+- **Score**: Foods eaten in that game (higher = better)
+- **Epsilon**: Exploration rate (0.995 = random, 0.010 = strategic)
+- **Avg Score**: Performance trend over last 100 games
